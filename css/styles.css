@@ -3,11 +3,52 @@
     --content-color: #434455;
     --logo-color: #4d5ae5;
     --hover-list-color: #404bbf;
-  }
+    --btn-border: #e7e9fc;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: "Roboto", sans-serif;
     color: var(--content-color);
     background-color: #FFFFFF;
+}
+main {
+    flex-grow: 1;
+}
+p {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+img {
+    display: block;
+}
+
+.container {
+    /* display: flex; */
+    width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
+    /* justify-content: center; */
 }
 .link{
     text-decoration: none;
@@ -18,6 +59,17 @@ body{
 
 /* MAIN PAGE */
 /* header */
+.header {
+    border-bottom: 1px solid var(--btn-border);
+}
+
+.container-header{
+    display: flex;
+}
+.logo-navigation {
+    display: flex;
+    align-items: center;
+}
 .logo-link {
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
@@ -26,6 +78,7 @@ body{
     color: var(--logo-color); 
     line-height: 1.17;
     letter-spacing: 0.03em;
+    margin-right: 76px
 }
 .logo-studio{
     font-family: 'Raleway', sans-serif;
@@ -35,6 +88,13 @@ body{
     color: var(--title-color);
     line-height: 1.17;
     letter-spacing: 0.03em;
+}
+.navigation {
+    display: flex;
+    gap: 40px
+}
+.navigation-item{
+    padding: 24px 0;
 }
 .navigation-item-link {
     font-weight: 500;
@@ -50,6 +110,11 @@ body{
 .contacts-box {
     font-style: normal;
 }
+.contacts {
+    display: flex;
+    gap: 40px;
+    padding: 24px 0;
+}
 .contacts-item-link {
     font-size: 16px;
     letter-spacing: 0.02em;
@@ -63,6 +128,7 @@ body{
 /* section hero */
 .hero{
     background: var(--title-color);
+    padding: 188px 0;
 }
 .title {
     font-weight: 700;
@@ -70,10 +136,11 @@ body{
     line-height: 1.07;
     letter-spacing: 0.02em;
     color: #FFFFFF;
-    text-align: center;
+    margin: 0 auto 48px auto;
+    max-width: 496px;
 }
 .btn-order {
-    background: #4D5AE5;
+    background-color: var(--logo-color);
     color: #FFFFFF;
     cursor: pointer;
     font-weight: 500;
@@ -81,19 +148,36 @@ body{
     letter-spacing: 0.04em;
     font-family: "Roboto", sans-serif;
     line-height: 1.5;
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    border: none; 
+    border-radius: 4px;
+    margin: 0 auto;
 }
 .btn-order:hover,
 .btn-order:focus {
     background: #404BBF;
 }
 /* section advantages */
+.advantages {
+    padding: 120px 0;
+}
+.advantages-items{
+    display: flex;
+    gap: 24px;
+}
+.advantages-card {
+    width: calc((100% - 72px) / 4);
+}
 .advantages-card-title {
     font-weight: 500;
     font-size: 20px;
     letter-spacing: 0.02em;
     color: var(--title-color);
-    text-align: center;
+    text-align: start;
     line-height: 1.2;
+    margin-bottom: 8px; 
 }
 .advantages-card-content {
     font-size: 16px;
@@ -101,6 +185,9 @@ body{
     letter-spacing: 0.02em;
 }
 /* section ability */
+.ability{
+    padding-bottom: 120px; 
+}
 .chapter-title {
     font-weight: 700;
     font-size: 36px;
@@ -109,13 +196,22 @@ body{
     color: var(--title-color);
     text-align: center;
     line-height: 1.11;
+    margin-bottom: 72px; 
+}
+.ability-items {
+    display: flex;
+    gap: 24px;
+    
 }
 .ability-card {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: calc((100% - 48px) / 3); 
+    justify-content: center;
 }
 /* section team */
 .team {
     background: #F4F4FD;
+    padding: 120px 0;
 }
 .team-item{
     background: #FFFFFF;
@@ -128,6 +224,18 @@ body{
     color: var(--title-color);
     text-align: center;
     line-height: 1.11;
+    margin-bottom: 72px; 
+}
+.team-cards {
+    display: flex;
+    gap: 24px; 
+}
+.team-item {
+    width: calc((100% - 72px) / 4); 
+    border-radius: 0px 0px 4px 4px; 
+}
+.wrap-name {
+    padding: 32px 16px;
 }
 .team-name {
     font-weight: 500;
@@ -136,6 +244,7 @@ body{
     color: var(--title-color);
     text-align: center;
     line-height: 1.2;
+    margin-bottom: 8px;
 }
 .team-job {
     font-size: 16px;
@@ -145,7 +254,7 @@ body{
 }
 /* section footer */
 .footer {
-
+    padding: 100px 0;
     background: var(--title-color);
 }
 .logo-link-footer {
@@ -156,6 +265,8 @@ body{
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #4D5AE5;
+    display: inline-block;
+    margin-bottom: 16px;
 }
 .logo-studio-footer{
     color: #F4F4FD;
@@ -165,32 +276,59 @@ body{
     text-transform: uppercase;
 }
 .footer-content {
-    
+    max-width: 264px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #F4F4FD;
 }
+
+
 /* PORTFOLIO */
+.projects {
+    padding-top: 96px; 
+    padding-bottom: 120px; 
+}
+/* btn navigation */
+.btns-filters {
+    display: flex; 
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 72px;
+}
 .btns-filters-btn{
     font-family: "Roboto", sans-serif;
     background: #F4F4FD;
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--btn-border);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
     color: #4D5AE5;
     cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 4px; 
 }
 .btns-filters-btn:hover,
 .btns-filters-btn:focus {
     background: #404BBF;
     color: #FFFFFF;
+    border: 1px solid transparent;
 }
 /* section projects */
+.projects-list{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px; 
+}
 .project-card {
-    border: 1px solid #E7E9FC;
+    width: calc((100% - 48px) / 3); 
+}
+.wrap-card-project {
+    padding: 32px 16px;
+    border: 1px solid var(--btn-border);
+    border-top: none; 
 }
 .project-card-title {
     font-weight: 500;
@@ -198,6 +336,7 @@ body{
     letter-spacing: 0.02em;
     color: var(--title-color);
     line-height: 1.2;
+    margin-bottom: 8px;
 }
 .project-card-content {
     font-size: 16px;
