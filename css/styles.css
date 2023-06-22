@@ -5,19 +5,7 @@
     --hover-list-color: #404bbf;
     --btn-border: #e7e9fc;
 }
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
+
 body{
     min-height: 100vh;
     display: flex;
@@ -94,15 +82,14 @@ img {
     gap: 40px;
     margin-right: 332px;
 }
-.navigation-item {
-    padding: 24px 0;
-}
+
 .navigation-item-link {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--title-color);
+    padding: 24px 0;
 }
 .navigation-item-link:hover,
 .navigation-item-link:focus {
@@ -180,6 +167,22 @@ img {
     line-height: 1.2;
     margin-bottom: 8px; 
 }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.advantages-card {
+    width: calc((100% - 72px) / 4); 
+}
 .advantages-card-content {
     font-size: 16px;
     line-height: 1.5;
@@ -199,6 +202,7 @@ img {
     line-height: 1.11;
     margin-bottom: 72px; 
 }
+
 .ability-items {
     display: flex;
     gap: 24px;
